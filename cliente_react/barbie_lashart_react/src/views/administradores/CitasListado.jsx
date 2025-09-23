@@ -35,12 +35,15 @@ export default function DashboardCitas() {
                     <td>{cita.fecha}</td>
                     <td>{cita.bloque}</td>
                     <td>
-                        <button className="btn btn-danger me-2" title="Eliminar cita">
-                        <i className="bi bi-trash"></i>
-                        </button>
-                        <button className="btn btn-primary" title="Enviar mensaje">
+                        <a className="btn btn-primary me-2" href="citas_editar" title="Editar hora">
+                        <i className="bi bi-pencil-square"></i>
+                        </a>
+                        <a className="btn btn-success me-2" href="citas_mensaje" title="Enviar mensaje">
                         <i className="bi bi-send"></i>
-                        </button>
+                        </a>
+                        <a className="btn btn-danger me-2" title="Eliminar cita">
+                        <i className="bi bi-trash"></i>
+                        </a>
                     </td>
                     </tr>
                 ))}
