@@ -1,6 +1,6 @@
 export default function Contacto(){
     return(
-        <div className="container py-5 " id="contacto">
+        <div className="container py-5" id="contacto">
             <div className="row align-items-center">
             <div className="col-6  text-center">
                 <h1 className="fw-bold text-center">Contáctanos</h1>
@@ -17,23 +17,23 @@ export default function Contacto(){
                         </h2>
                         <div className="row mb-3">
                             <div className="col-7">
-                                <label for="nombre" className="form-label">Nombre</label>
+                                <label htmlFor="nombre" className="form-label">Nombre</label>
                                 <input type="text" className="form-control" id="nombre" placeholder="FirstName LastName" required />
                             </div>
                             <div className="col-5">   
-                                <label for="telefono" className="form-label">Teléfono</label>
+                                <label htmlFor="telefono" className="form-label">Teléfono</label>
                                 <input type="text" className="form-control" id="telefono" placeholder="912345678" required />
                             </div>
                         </div>
                         <div className="row mb-3">
                             <div className="col-12">
-                                <label for="correo" className="form-label">Correo</label>
+                                <label htmlFor="correo" className="form-label">Correo</label>
                                 <input type="text" className="form-control" id="correo" placeholder="example@gmail.com" required />
                             </div>
                         </div>
                         <div className="row mb-3">
                             <div className="col-12">
-                                <label for="comentario" className="form-label">Comentario</label>
+                                <label htmlFor="comentario" className="form-label">Comentario</label>
                                 <textarea type="text" className="form-control" id="comentario" placeholder="Me guataria cotizar un retiro se set..." required />
                             </div>
                         </div>

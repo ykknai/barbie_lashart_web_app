@@ -6,6 +6,8 @@ import Contacto from './views/usuarios/Contacto';
 import Login from './views/Login';
 import Galeria from './views/usuarios/Galeria';
 import CitasListado from './views/administradores/CitasListado';
+import CitasEditar from './views/administradores/CitasEditar';
+import CitasMensaje from './views/administradores/CitasMensaje';
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
             {
                 path:'citas_listado',
                 element:<CitasListado/>
+            },
+            {
+                path:'citas_editar',
+                element:<CitasEditar/>
+            },
+            {
+                path:'citas_mensaje',
+                element:<CitasMensaje/>
             }
         ]
     }
