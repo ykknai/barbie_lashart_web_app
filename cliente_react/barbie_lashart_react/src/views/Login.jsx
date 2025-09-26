@@ -61,7 +61,7 @@ export default function Login() {
                 {/* <!-- CREAR CUENTA --> */}
                 <div className="text-center ms-2 mt-3">
                   <a
-                    href="citas_listado"
+                    href="/admin/citas_listado"
                     className="text-decoration-none"
                   >
                     Crear Cuenta

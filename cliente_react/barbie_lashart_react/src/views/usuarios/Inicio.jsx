@@ -11,7 +11,7 @@ export default function Inicio() {
                     <p className="lead mt-4">
                         Transforma tu belleza y<br />
                         dale ese toque de magia que se merecen<br />
-                        con un look radiante.
+                        tus pestañas.
                     </p>
                     <div className="mt-4">
                         <a href="servicios" className="btn me-3" id="btn-login">VER SERVICIOS</a>

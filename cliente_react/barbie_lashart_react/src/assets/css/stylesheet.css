@@ -254,3 +254,7 @@ table th, table td {
     color: #860d3e;
     font-weight: bold;
 }
+
+.dropdown-menu {
+    background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
+}
