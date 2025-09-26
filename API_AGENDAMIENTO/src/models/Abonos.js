@@ -3,7 +3,7 @@ import db from '../config/database.js';
 
 const Abono = db.define('abonos', {
   id_abono: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
     autoIncrement: true,
     validate: { max: 99 }
@@ -20,7 +20,7 @@ const Abono = db.define('abonos', {
     type: DataTypes.DATEONLY,
     allowNull: false,
   },
-  total: {
+  monto_abono: {
     type: DataTypes.SMALLINT.UNSIGNED,
     allowNull: false
   },

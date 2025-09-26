@@ -3,10 +3,9 @@ import db from '../config/database.js';
 
 const Venta = db.define('ventas', {
   id_venta: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
     autoIncrement: true,
-    validate: { max: 99 }
   },
   rut: {
     type: DataTypes.STRING(10),
@@ -32,9 +31,13 @@ const Venta = db.define('ventas', {
     type: DataTypes.DATEONLY,
     allowNull: false
   },
-  abono: {
-    type: DataTypes.SMALLINT.UNSIGNED,
-    allowNull: false
+  id_abono: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    allowNull: false,
+    references:{
+      model: 'abonos',
+      key: 'id_abono'
+    }
   }
 }, {
   timestamps: false

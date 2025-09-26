@@ -1,7 +1,8 @@
 import { DataTypes } from 'sequelize';
+import bcrypt from 'bcrypt';
 import db from '../config/database.js';
 
-const Administrador = db.define('admninistradores', {
+const Administrador = db.define('administradores', {
   id_admin: {
     type: DataTypes.TINYINT.UNSIGNED,
     primaryKey: true,
@@ -14,6 +15,7 @@ const Administrador = db.define('admninistradores', {
   },
   correo: {
     type: DataTypes.STRING(254),
+    primaryKey: true,
     allowNull: false,
     unique: true
   },
@@ -23,10 +25,25 @@ const Administrador = db.define('admninistradores', {
   },
   rol: {
     type: DataTypes.CHAR(1),
-    allowNull: false
+    allowNull: false,
+    defaultValue: 'A'
   }
 }, {
-  timestamps: false
+  timestamps: false,
+  hooks: {
+    beforeCreate: async (admin) => {
+      if (admin.contraseña) {
+        const salt = await bcrypt.genSalt(10);
+        admin.contraseña = await bcrypt.hash(admin.contraseña, salt);
+      }
+    },
+    beforeUpdate: async (admin) => {
+      if (admin.changed('contraseña')) {
+        const salt = await bcrypt.genSalt(10);
+        admin.contraseña = await bcrypt.hash(admin.contraseña, salt);
+      }
+    }
+  }
 });
 
 export default Administrador;

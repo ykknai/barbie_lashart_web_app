@@ -206,7 +206,7 @@ table th, table td {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-#btn-restablecer {
+.btn-restablecer {
     background-color: #4455ff;
     color: white;
     padding: 10px 15px;
@@ -216,11 +216,11 @@ table th, table td {
     transition: all 0.3s ease;
 }
 
-#btn-restablecer:hover {
+.btn-restablecer:hover {
     background-color: #2233cc;
 }
 
-#btn-confirmar {
+.btn-confirmar {
     background-color: #259b31;
     color: white;
     padding: 10px 15px;
@@ -230,7 +230,7 @@ table th, table td {
     transition: all 0.3s ease;
 }
 
-#btn-confirmar:hover {
+.btn-confirmar:hover {
     background-color: #1e7e27;
 }
 

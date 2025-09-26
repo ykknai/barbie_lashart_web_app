@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize';
+import bcrypt from 'bcrypt';
 import db from '../config/database.js';
 
 const Cliente = db.define('clientes', {
@@ -13,9 +14,8 @@ const Cliente = db.define('clientes', {
     allowNull: false
   },
   telefono: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.STRING(9),
     allowNull: false,
-    validate: { max: 999999999 }
   },
   correo: {
     type: DataTypes.STRING(254),
@@ -23,11 +23,25 @@ const Cliente = db.define('clientes', {
     unique: true
   },
   contraseña: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING(60),
     allowNull: false
   }
 }, {
-  timestamps: false
+  timestamps: false,
+  hooks: {
+    beforeCreate: async (user) => {
+      if (user.contraseña) {
+        const salt = await bcrypt.genSalt(10);
+        user.contraseña = await bcrypt.hash(user.contraseña, salt);
+      }
+    },
+    beforeUpdate: async (user) => {
+      if (user.changed('contraseña')) {
+        const salt = await bcrypt.genSalt(10);
+        user.contraseña = await bcrypt.hash(user.contraseña, salt);
+      }
+    }
+  }
 });
 
 export default Cliente;

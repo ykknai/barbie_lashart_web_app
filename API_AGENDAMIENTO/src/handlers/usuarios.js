@@ -1,9 +1,8 @@
-const Usuario = require('../models/Usuario');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import { Cliente } from '../models/index.js'; // Ajusta la ruta según tu estructura
 
-async function crearUsuario(req, res) {
+export async function crearUsuarioCliente(req, res) {
   const { email, password } = req.body;
+
   if (!email || !password) {
     return res.status(401).json({ error: 'Error, email y password son necesarias !!' });
   }
@@ -13,17 +12,15 @@ async function crearUsuario(req, res) {
   }
 
   try {
-    const usuario = await Usuario.findByPk(email);
+    const usuario = await Cliente.findByPk(email); // O usa findOne si el email no es PK
     if (usuario) {
       return res.status(402).json({ error: 'Error, el usuario ya está registrado en la Base de Datos x.x' });
     }
 
-    const newUsuario = await Usuario.create({ email, password });
-    res.status(200).json({ msg: 'Usuario creado con éxito !' });
+    const newUsuario = await Cliente.create({ email, password });
+    res.status(200).json({ msg: 'Usuario creado con éxito !', usuario: newUsuario });
   } catch (error) {
-    console.log('Error, no se logró crear el usuario x.x');
+    console.error('Error, no se logró crear el usuario x.x', error);
     res.status(500).json({ error: 'Error interno x.x' });
   }
 }
-
-module.exports = { crearUsuario };

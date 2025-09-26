@@ -3,10 +3,9 @@ import db from '../config/database.js';
 
 const Cita = db.define('citas', {
   id_cita: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
     autoIncrement: true,
-    validate: { max: 99 }
   },
   id_servicio: {
     type: DataTypes.TINYINT.UNSIGNED,
@@ -17,10 +16,10 @@ const Cita = db.define('citas', {
     }
   },
   id_bloque: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     references: {
-      model: 'agendamientos',
+      model: 'horas_disponibles',
       key: 'id_bloque'
     }
   },
@@ -41,7 +40,7 @@ const Cita = db.define('citas', {
     allowNull: false
   },
   id_abono: {
-    type: DataTypes.TINYINT.UNSIGNED,
+    type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     references: {
       model: 'abonos',

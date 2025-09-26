@@ -9,7 +9,7 @@ const Servicio = db.define('servicios', {
     validate: { max: 99 }
   },
   nom_servicio: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING(50),
     allowNull: false,
     unique: true
   },
@@ -23,7 +23,8 @@ const Servicio = db.define('servicios', {
   },
   estado: {
     type: DataTypes.CHAR(1),
-    allowNull: false
+    allowNull: false,
+    defaultValue: 'A'
   }
 }, {
   timestamps: false
