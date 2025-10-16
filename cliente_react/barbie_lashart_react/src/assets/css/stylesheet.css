@@ -1,0 +1,282 @@
+/* Estilos para el navbar */
+.navbar {
+    background: linear-gradient(to bottom, pink, #d16ba5); /* rosado arriba, más oscuro abajo */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ff5bef66;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
+    min-height: 100vh;
+}
+
+/* Estilos para el inicio */
+#inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo letras inicio */
+#inicio p {
+    font-size: 2rem;
+    color: #d6336c; /* color rosado fuerte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#inicio h1 {
+    font-size: 3.5rem;
+    color: #ffffff; /* color rosado oscuro */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.inicio-span{
+    color: #c2185b;
+}
+
+
+#pyme-icon{
+    width: 60px; /* ajusta según tu diseño */
+    height: 60px; /* igual que el ancho para mantener el círculo */
+    border-radius: 50%; /* hace que el contenedor sea circular */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* sombra suave alrededor */
+    object-fit: cover; /* asegura que la imagen se ajuste bien */
+    overflow: hidden; /* evita que se vea fuera del borde redondeado */
+}
+
+#navbar-text{
+    font-size: 18px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0px 0px 8px rgba(47, 2, 42, 0.273);
+}
+
+/* Estilo section images */
+
+section{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 75%;
+    transition: 0.5s ease;
+}
+
+section img:hover{
+    cursor: pointer;
+    width: 150px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    #cuadro-imagenes {
+        margin-top: 20px;
+    }
+    section {
+        flex-wrap: wrap;
+        height: 25%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section img {
+        width: 25%;
+        flex-grow: 0;
+        margin-top: 5px;
+    }
+
+    section img:hover {
+        width: 50%;
+    }
+}
+
+
+
+/* Estilo Login */
+#btn-login {
+    background-color: palevioletred;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-login:hover {
+    background-color: #c06fb2;
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
+}
+
+#btn-wsp {
+    background-color: #55d363;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#btn-wsp:hover {
+    background-color: #4c9154;
+}
+
+
+.icono-circular {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, pink, #d16ba5); 
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.icono-circular:hover {
+    transform: scale(1.1);
+}
+
+.link-contacto {
+    color: #d6336c; /* o el color que quieras */
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-contacto:hover {
+    color: #c2185b; /* color al pasar el mouse */
+    text-decoration: underline;
+}
+
+table th, table td {
+    vertical-align: middle;
+}
+
+.btn {
+    font-size: 1.2rem;
+}
+
+#citas_editar{
+    font-family: sans-serif;
+}
+
+#formulario_cita{
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-restablecer {
+    background-color: #4455ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-restablecer:hover {
+    background-color: #2233cc;
+}
+
+.btn-confirmar {
+    background-color: #259b31;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirmar:hover {
+    background-color: #1e7e27;
+}
+
+.input-formulario,
+.select-formulario,
+.textarea-formulario {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d48ec9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.label-formulario {
+    font-weight: bold;
+    color: #d6336c;
+    font-size: 20px;
+}
+
+.span-form {
+    color: #860d3e;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
+}
+
+#btn-editar {
+    background-color: palevioletred;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-editar:hover {
+    background-color: #5436ff;
+}
+
+#btn-logout {
+    background-color: palevioletred;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-logout:hover {
+    background-color: #ff2c2c;
+}
