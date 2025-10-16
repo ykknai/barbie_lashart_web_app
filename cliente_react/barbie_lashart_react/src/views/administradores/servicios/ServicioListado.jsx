@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function ServicioListado() {
@@ -76,13 +77,13 @@ export default function ServicioListado() {
                                     <td>{serv.estado === "A" ? "Sí" : "No"}</td>
                                     <td>
                                         {/* Botón editar */}
-                                        <a
+                                        <Link
                                             className="btn btn-primary me-2"
-                                            href={'servicios_editar'}
+                                            to={`/admin/servicios_editar/${serv.id_servicio}`} 
                                             title="Editar servicio"
                                         >
                                             <i className="bi bi-pencil-square"></i>
-                                        </a>
+                                        </Link>
 
                                         {/* Botón activar/desactivar con icono */}
                                         <button

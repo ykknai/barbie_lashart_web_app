@@ -64,7 +64,7 @@ export default function CitasListado() {
                                         <a className="btn btn-success me-2" href="citas_mensaje" title="Enviar mensaje">
                                             <i className="bi bi-send"></i>
                                         </a>
-                                        <a className="btn btn-danger me-2" href="crear_servicio" title="Eliminar cita">
+                                        <a className="btn btn-danger me-2" href="#" title="Eliminar cita">
                                             <i className="bi bi-trash"></i>
                                         </a>
                                     </td>

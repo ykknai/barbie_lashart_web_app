@@ -1,5 +1,5 @@
 // handlers/crearAdmin.js
-import Administrador from "../models/Admninistradores.js";
+import Administrador from "../models/Administradores.js";
 
 export const crearAdmin = async (req, res) => {
     const tokenCreacion = req.headers["x-admin-create-token"] || req.body.admin_creation_token;

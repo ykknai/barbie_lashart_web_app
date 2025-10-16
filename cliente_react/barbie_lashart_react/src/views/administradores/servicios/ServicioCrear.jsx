@@ -60,7 +60,7 @@ export default function CrearServicio() {
                 </p>
             </div>
 
-            {mensaje && <div className="alert alert-info">{mensaje}</div>}
+            {mensaje && <div className="alert alert-success">{mensaje}</div>}
 
             <form id="formulario_cita" onSubmit={handleSubmit}>
                 {/* Nombre Servicio */}

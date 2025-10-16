@@ -1,6 +1,6 @@
 //Importacion de modelos
 import Abono from './Abonos.js';
-import Administrador from './Admninistradores.js';
+import Administrador from './Administradores.js';
 import HorasDisponibles from './HorasDisponibles.js';
 import Cita from './Citas.js';
 import Cliente from './Clientes.js';

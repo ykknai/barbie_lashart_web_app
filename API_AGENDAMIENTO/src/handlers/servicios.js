@@ -22,6 +22,7 @@ export const crearServicio = async (req, res) => {
   }
 };
 
+// Traer servicios
 export const getServicios = async (req, res) => {
   try {
     const servicios = await Servicio.findAll({ order: [["id_servicio", "ASC"]] });
@@ -31,6 +32,19 @@ export const getServicios = async (req, res) => {
     res.status(500).json({ error: "Error al obtener servicios" });
   }
 };
+
+// Traer servicio con ID
+export const getServicioConId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const servicio = await Servicio.findByPk(id);
+    if (!servicio) return res.status(404).json({ message: "Servicio no encontrado" });
+    res.json(servicio);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error del servidor" });
+  }
+}
 
 // Cambiar estado de un servicio
 export const cambiarEstadoServicio = async (req, res) => {
@@ -64,5 +78,39 @@ export const eliminarServicio = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: "Error al eliminar servicio" });
+  }
+};
+
+export const editarServicio = async (req, res) => {
+  const { id } = req.params;
+  const { nuevo_nombre, precio_set, precio_retoque } = req.body;
+
+  try {
+    // Validar que los campos no estén vacíos
+    if (!nuevo_nombre || !precio_set || !precio_retoque) {
+      return res.status(400).json({ message: "Todos los campos son obligatorios" });
+    }
+
+    // Buscar servicio
+    const servicio = await Servicio.findByPk(id);
+
+    if (!servicio) {
+      return res.status(404).json({ message: "Servicio no encontrado" });
+    }
+
+    // Actualizar servicio
+    await servicio.update({
+      nom_servicio: nuevo_nombre,
+      precio_set,
+      precio_retoque
+    });
+
+    res.json({
+      message: "Servicio actualizado correctamente",
+      servicio
+    });
+  } catch (error) {
+    console.error("Error al editar servicio:", error);
+    res.status(500).json({ message: "Error del servidor" });
   }
 };

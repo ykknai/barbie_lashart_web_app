@@ -15,7 +15,6 @@ const Administrador = db.define('administradores', {
   },
   correo: {
     type: DataTypes.STRING(254),
-    primaryKey: true,
     allowNull: false,
     unique: true
   },

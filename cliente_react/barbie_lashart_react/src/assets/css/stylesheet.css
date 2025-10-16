@@ -138,12 +138,6 @@ section img:hover{
     background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
 }
 
-#contacto{
-    font-family: serif;
-    height: 100vh;
-}
-
-
 #btn-wsp {
     background-color: #55d363;
     color: white;
@@ -257,4 +251,32 @@ table th, table td {
 
 .dropdown-menu {
     background: linear-gradient(to bottom, #ffe6f0, #ffb3d9);
+}
+
+#btn-editar {
+    background-color: palevioletred;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-editar:hover {
+    background-color: #5436ff;
+}
+
+#btn-logout {
+    background-color: palevioletred;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-logout:hover {
+    background-color: #ff2c2c;
 }
